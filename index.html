@@ -2,15 +2,15 @@
 <html>
 <head>
   <script src="jquery-1.9.1.min.js"></script>
-  <script src="snake.js"></script>
   <link rel="stylesheet" type="text/css" href="style.css">
   <meta charset="utf-8" />
   <title>Snake</title>
 </head>
-<body>
-  <div class="wrapper">
-    <span id="score">&nbsp;</span>
-    <canvas class="main_canvas" width="500px" height="500px"></canvas>
+<body style="width:100vw;height:100vh;padding:0px;margin:0px">
+  <div id="wrapper" class="wrapper"style="width:100vw;height:100vh;padding:0px;margin:0px">
+    <span id="score" style="display:none">&nbsp;</span>
+    <canvas id="canvas" class="main_canvas" style="display:block;padding:0px;margin:0px"></canvas>
   </div>
 </body>
+<script src="snake.js"></script>
 </html>

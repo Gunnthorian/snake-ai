@@ -2,15 +2,23 @@
 (function() {
   var CANVAS_HEIGHT, CANVAS_WIDTH, DOWN, FIELD_AREA, Game, HEIGHT, H_SCALE, INIT_FPS, LEFT, PathNotFoundError, Point, RIGHT, SearchState, Snake, UP, WIDTH, W_SCALE, isOpposite, randInt, rgba, _ref;
 
-  INIT_FPS = 200;
+  INIT_FPS = 60;
 
-  WIDTH = 20;
+  WIDTH = 160;
 
-  HEIGHT = 20;
+  HEIGHT = 90;
 
-  CANVAS_WIDTH = 500;
+  var wrapper = document.getElementById('wrapper');
+  var canvas = document.getElementById('canvas');
 
-  CANVAS_HEIGHT = 500;
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  console.log(window.innerWidth);
+
+  CANVAS_WIDTH = window.innerWidth;
+
+  CANVAS_HEIGHT = window.innerHeight;
 
   FIELD_AREA = HEIGHT * WIDTH;
 
@@ -223,10 +231,12 @@
       this.ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
       for (i = _i = 0, _ref1 = this.snake.body.length; 0 <= _ref1 ? _i < _ref1 : _i > _ref1; i = 0 <= _ref1 ? ++_i : --_i) {
         seg = this.snake.body[i];
-        this.ctx.fillStyle = rgba(133, 22, 88, 1 - 0.7 * (i / this.snake.body.length));
+        //this.ctx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+        //this.ctx.fillStyle = rgba(133, 22, 88, 1 - 0.7 * (i / this.snake.body.length));
+        this.ctx.fillStyle = rgba(0, 0, 255, 255);
         this.ctx.fillRect(seg.x * W_SCALE, seg.y * H_SCALE, W_SCALE, H_SCALE);
       }
-      this.ctx.fillStyle = "yellow";
+      this.ctx.fillStyle = "red";
       return this.ctx.fillRect(this.food.x * W_SCALE, this.food.y * H_SCALE, W_SCALE, H_SCALE);
     };
 
